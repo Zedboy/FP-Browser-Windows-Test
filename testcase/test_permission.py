@@ -16,7 +16,7 @@ class TestPermission(object):
     def setup_method(self):
         stop_browser_app()
 
-    @pytest.mark.skip("跳过")
+    # @pytest.mark.skip("跳过")
     def test_geolocation_allow(self):
         """
         测试 允许定位的权限
@@ -25,12 +25,24 @@ class TestPermission(object):
 
         basic = Basic() \
             .append_allow_permission(
+            get_permission_type(permission_type=PermissionType.NOTIFICATIONS, version=get_chromium_major_version())) \
+            .append_allow_permission(
             get_permission_type(permission_type=PermissionType.GEOLOCATION, version=get_chromium_major_version()))
 
         settings.add_module(basic)
 
-        print(settings.parse())
-        driver, config = get_driver(custom_url='https://browserleaks.com/geo', custom_config=settings.parse(),
+        geo = Geo() \
+            .set_longitude("113.219875") \
+            .set_latitude("23.401172") \
+            .set_accuracy("14") \
+            .set_altitude("13") \
+            .set_altitude_accuracy("12") \
+            .set_heading("11") \
+            .set_speed(BaseEnum.NULL.value)
+
+        settings.add_module(geo)
+
+        driver, config = get_driver(custom_url='https://m.amap.com/', custom_config=settings.parse(),
                                     only_custom_config=True)
         self.driver = driver
         self.config = config
@@ -50,7 +62,7 @@ class TestPermission(object):
         self.driver.close()
         self.driver.quit()
 
-    @pytest.mark.skip("跳过")
+    # @pytest.mark.skip("跳过")
     def test_geolocation_reject(self):
         """
         测试 拒绝定位的权限
@@ -63,7 +75,7 @@ class TestPermission(object):
 
         settings.add_module(basic)
 
-        driver, config = get_driver(custom_url='https://browserleaks.com/geo', custom_config=settings.parse(),
+        driver, config = get_driver(custom_url='https://m.amap.com/', custom_config=settings.parse(),
                                     only_custom_config=True)
         self.driver = driver
         self.config = config

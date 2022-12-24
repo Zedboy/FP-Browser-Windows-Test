@@ -29,8 +29,8 @@ class TestGeo(object):
         #     "timestamp": 1657251769930
         # }
         # url = 'https://map.baidu.com/mobile/webapp/index/index/foo=bar/vt=map'
-        # url = 'https://m.amap.com/'
-        url = 'https://browserleaks.com/geo'
+        url = 'https://m.amap.com/'
+        # url = 'https://browserleaks.com/geo'
 
         settings = FPBrowserSettings()
 

@@ -1,0 +1,67 @@
+// todo
+// 从这里引入 components/permissions/permission_util.cc
+// 放在 String PermissionStatus::state() const { 方法前面
+
+std::string GetPermissionString(
+    ContentSettingsType content_type) {
+  switch (content_type) {
+    case ContentSettingsType::GEOLOCATION:
+      return "Geolocation";
+    case ContentSettingsType::NOTIFICATIONS:
+      return "Notifications";
+    case ContentSettingsType::MIDI_SYSEX:
+      return "MidiSysEx";
+    case ContentSettingsType::DURABLE_STORAGE:
+      return "DurableStorage";
+    case ContentSettingsType::PROTECTED_MEDIA_IDENTIFIER:
+      return "ProtectedMediaIdentifier";
+    case ContentSettingsType::MEDIASTREAM_MIC:
+      return "AudioCapture";
+    case ContentSettingsType::MEDIASTREAM_CAMERA:
+      return "VideoCapture";
+    case ContentSettingsType::MIDI:
+      return "Midi";
+    case ContentSettingsType::BACKGROUND_SYNC:
+      return "BackgroundSync";
+    case ContentSettingsType::SENSORS:
+      return "Sensors";
+    case ContentSettingsType::ACCESSIBILITY_EVENTS:
+      return "AccessibilityEvents";
+    case ContentSettingsType::CLIPBOARD_READ_WRITE:
+      return "ClipboardReadWrite";
+    case ContentSettingsType::CLIPBOARD_SANITIZED_WRITE:
+      return "ClipboardSanitizedWrite";
+    case ContentSettingsType::PAYMENT_HANDLER:
+      return "PaymentHandler";
+    case ContentSettingsType::BACKGROUND_FETCH:
+      return "BackgroundFetch";
+    case ContentSettingsType::IDLE_DETECTION:
+      return "IdleDetection";
+    case ContentSettingsType::PERIODIC_BACKGROUND_SYNC:
+      return "PeriodicBackgroundSync";
+    case ContentSettingsType::WAKE_LOCK_SCREEN:
+      return "WakeLockScreen";
+    case ContentSettingsType::WAKE_LOCK_SYSTEM:
+      return "WakeLockSystem";
+    case ContentSettingsType::NFC:
+      return "NFC";
+    case ContentSettingsType::VR:
+      return "VR";
+    case ContentSettingsType::AR:
+      return "AR";
+    case ContentSettingsType::STORAGE_ACCESS:
+      return "StorageAccess";
+    case ContentSettingsType::CAMERA_PAN_TILT_ZOOM:
+      return "CameraPanTiltZoom";
+    case ContentSettingsType::WINDOW_PLACEMENT:
+      return "WindowPlacement";
+    case ContentSettingsType::LOCAL_FONTS:
+      return "LocalFonts";
+    case ContentSettingsType::DISPLAY_CAPTURE:
+      return "DisplayCapture";
+    default:
+      break;
+  }
+  NOTREACHED();
+  return std::string();
+}

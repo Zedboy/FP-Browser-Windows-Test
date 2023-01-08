@@ -5,6 +5,8 @@ from fp_browser_sdk.ext.basic import Basic
 from fp_browser_sdk.fp_browser_settings import FPBrowserSettings
 from fp_browser_sdk.ext.inject_js import InjectJS
 from selenium.webdriver.common.by import By
+from helper.cdp import loop_find_element, click_ele
+
 
 class TestInjectJs(object):
 
@@ -86,14 +88,13 @@ class TestInjectJs(object):
         self.driver = driver
         self.config = config
 
-        selector = 'a'
-        exists = wait_el(driver=self.driver, selector=selector, timeout=20)
+        document = self.driver.execute_cdp_cmd("DOM.getDocument", {})
+        a = loop_find_element(driver=self.driver, selector="a", node_id=document)
 
         # 需要判断元素是否存在
-        assert exists
+        assert a is not None
 
-        a = self.driver.find_element(By.CSS_SELECTOR, selector)
-        a.click()
+        click_ele(driver=self.driver, ele=a)
 
         sleep(1)
         script = '''

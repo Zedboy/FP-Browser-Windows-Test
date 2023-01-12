@@ -7,7 +7,7 @@
 
 指纹浏览器（For Windows）全部选项的测试用例
 
->注意：该项目已经完成全部测试，暂不提供下载，如果需要测试请联系我。下一步计划完成 Mac、Linux 端，然后完成说明文档。
+>注意：该项目已经完成全部测试，免费的 Windows 指纹浏览器项目请访问 [FP-Browser-Windows-Public 指纹浏览器（For Windows）免费公开项目](https://github.com/tyua07/FP-Browser-Windows-Public) 。
 
 ## 相关开源项目
 * [FP-Browser-Public 浏览器底层动态注入](https://github.com/tyua07/FP-Browser-Public) 
@@ -15,7 +15,8 @@
 * [FP-Browser-SDK 浏览器属性注入参数 SDK](https://github.com/tyua07/FP-Browser-SDK)
 * [FP-Browser-Test 指纹浏览器（For Android）全部选项的测试用例](https://github.com/tyua07/FP-Browser-Test)
 * [FP-Browser-Windows-Test 指纹浏览器（For Windows）全部选项的测试用例](https://github.com/tyua07/FP-Browser-Windows-Test)
-
+* [FP-Browser-Windows-Public 指纹浏览器（For Windows）免费公开项目](https://github.com/tyua07/FP-Browser-Windows-Public)
+* 
 ## 测试用例列表
 
 ```python

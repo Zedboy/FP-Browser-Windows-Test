@@ -146,6 +146,7 @@ test/drives/*
 /drives/*
 attr/*
 reports/*
+test_aes.py
 child_process.py
 test.py
 helper/aes.py

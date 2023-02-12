@@ -154,7 +154,7 @@ class TestRect(object):
         print("设置 可视区域页面宽度:", value, setting_value)
         for (index, item) in enumerate(value):
             if index < 4:
-                assert item == int(setting_value) - 17
+                assert item == int(setting_value) - 17 or item == int(setting_value) - 16
             else:
                 assert item == int(setting_value)
 

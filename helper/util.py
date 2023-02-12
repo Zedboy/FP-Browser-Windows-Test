@@ -104,6 +104,10 @@ def get_driver(custom_config: dict = None, custom_url=None, only_custom_config=F
         force_chrome_binary_location=chrome_binary_location
     )
 
+    wait_timeout = 60 * 60 * 24
+    driver.set_page_load_timeout(wait_timeout)
+    driver.implicitly_wait(wait_timeout)
+
     driver.get(url)
 
     return driver, config

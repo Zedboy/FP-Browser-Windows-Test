@@ -54,12 +54,16 @@ class Driver(object):
             "--ignore-ssl-errors",
             "--disable-web-security",
             "--disable-build-check",
-            "--enable-logging",
-            "--v=1",
+            # "--enable-logging",
+            # "--v=1",
+            # "--auto-open-devtools-for-tabs",
             "--disable-dev-shm-usage",
             "--no-first-run",
             '--chrome-custom-settings-json={}'.format(settings_json),
         ]
+
+        # todo
+        # chrome_agrs.append('--proxy-server={}:{}'.format("127.0.0.1", '10876'))
 
         service = Service(executable_path=Driver.get_chrome_driver(driver_version))
 

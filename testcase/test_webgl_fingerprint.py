@@ -27,7 +27,7 @@ class TestWebglFingerprint(object):
 
         fingerprint_offset = FingerprintOffset() \
             .auto_audio_offset() \
-            .auto_canvas_offset() \
+            .set_canvas_offset(1) \
             .set_webgl_offset(offset)
 
         settings.add_module(fingerprint_offset)

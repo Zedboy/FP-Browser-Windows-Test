@@ -3,7 +3,7 @@ from helper.util import get_driver, sleep, get_md5_func, stop_browser_app
 from fp_browser_sdk.ext.basic import Basic
 from fp_browser_sdk.fp_browser_settings import FPBrowserSettings
 from fp_browser_sdk.ext.fingerprint_offset import FingerprintOffset
-from fp_browser_sdk.ext.browser_enum import  BaseEnum, TLSVersion, Platform, PrefersColor, \
+from fp_browser_sdk.ext.browser_enum import BaseEnum, TLSVersion, Platform, PrefersColor, \
     CompatMode, MatchType, SpeechSynthesisVoiceAppendMode, PerformanceNavigationType, DoNotTrackType, MaxTouchPoint, \
     ScreenColorDepth, ScreenOrientationType, MediaKind, WebEffectiveConnectionType, WebConnectionType
 
@@ -123,16 +123,11 @@ class TestFingerprint(object):
 
     # @pytest.mark.skip("")
     @pytest.mark.parametrize('offset',
-                             [0.919,
-                              0.919,
-                              0.819,
-                              99.819,
-                              99.819,
-                              19.819,
-                              19.818,
-                              0.002,
-                              0.002,
-                              0.001])
+                             [1,
+                              2,
+                              2,
+                              135,
+                              135])
     def test_canvas(self, offset):
         """
         测试 Canvas 指纹偏移量

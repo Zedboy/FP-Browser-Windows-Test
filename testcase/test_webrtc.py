@@ -82,7 +82,7 @@ class TestWebrtc(object):
 
         custom_config = settings.parse()
 
-        driver, config = get_driver(custom_config=custom_config, only_custom_config=True)
+        driver, config = get_driver(custom_config=custom_config, only_custom_config=True, custom_url="http://jn4.jobnew.com.cn/#/webrtc")
         self.driver = driver
         self.config = config
 

@@ -62,9 +62,6 @@ class Driver(object):
             '--chrome-custom-settings-json={}'.format(settings_json),
         ]
 
-        # todo
-        # chrome_agrs.append('--proxy-server={}:{}'.format("127.0.0.1", '10876'))
-
         service = Service(executable_path=Driver.get_chrome_driver(driver_version))
 
         options = ChromeOptions()

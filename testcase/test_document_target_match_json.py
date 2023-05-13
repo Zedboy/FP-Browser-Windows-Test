@@ -20,8 +20,8 @@ class TestDocumentTargetMatch(object):
     @pytest.mark.parametrize('value', [
         ("https://ly.so.com/", 0),
         ("https://ly.so.com/?src=m_home", 1),
-        ('https://3g.163.com/sports/article/H3CC1DJ300058781.html', 2),
-        ('https://3g.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1', 3),
+        ('https://m.163.com/sports/article/H3CC1DJ300058781.html', 2),
+        ('https://m.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1', 3),
     ])
     def test_title(self, value):
         """
@@ -43,16 +43,16 @@ class TestDocumentTargetMatch(object):
             .append_match_list(DocumetMatch()
                                .set_target_url("https://ly.so.com/?src=m_home") \
                                .set_match_break(True) \
-                               .set_current_url("https://3g.163.com/") \
+                               .set_current_url("https://m.163.com/") \
                                .set_document_referrer("https://m.baidu.com/2345") \
                                .set_header_referrer("https://m.baidu.com/2345") \
                                .set_title("fuck you") \
                                .set_match_type(MatchType.FULL)
                                ) \
             .append_match_list(DocumetMatch()
-                               .set_target_url("https://3g.163.com/sports/article/(\\S+)") \
+                               .set_target_url("https://m.163.com/sports/article/(\\S+)") \
                                .set_match_break(True) \
-                               .set_current_url("https://3g.163.com/static") \
+                               .set_current_url("https://m.163.com/static") \
                                .set_document_referrer("https://m.baidu.com/static") \
                                .set_header_referrer("https://m.baidu.com/static") \
                                .set_title("fuck you") \
@@ -60,9 +60,9 @@ class TestDocumentTargetMatch(object):
                                ) \
             .append_match_list(DocumetMatch()
                                .set_target_url(
-            "https://3g.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1") \
+            "https://m.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1") \
                                .set_match_break(True) \
-                               .set_current_url("https://3g.163.com/sta") \
+                               .set_current_url("https://m.163.com/sta") \
                                .set_document_referrer("https://m.baidu.com/sta") \
                                .set_header_referrer("https://m.baidu.com/sta") \
                                .set_title("fuck you") \

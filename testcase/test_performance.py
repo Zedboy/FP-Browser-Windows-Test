@@ -29,8 +29,8 @@ class TestPerformance(object):
     @pytest.mark.parametrize('value', [
         ("https://ly.so.com/", 0),
         ("https://ly.so.com/?src=m_home", 1),
-        ('https://3g.163.com/sports/article/H3CC1DJ300058781.html', 2),
-        ('https://3g.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1', 3),
+        ('https://m.163.com/sports/article/H3CC1DJ300058781.html', 2),
+        ('https://m.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1', 3),
     ])
     def test_performance(self, value):
         """
@@ -60,7 +60,7 @@ class TestPerformance(object):
         ) \
             .append_match(
             PerformanceMatch()
-                .set_target_url("https://3g.163.com/sports/article/(\\S+)") \
+                .set_target_url("https://m.163.com/sports/article/(\\S+)") \
                 .set_match_break(True) \
                 .set_timing_redirectStart_offset(random.randint(10, 50)) \
                 .set_timing_redirectEnd_offset(random.randint(60, 100)) \
@@ -71,7 +71,7 @@ class TestPerformance(object):
             .append_match(
             PerformanceMatch()
                 .set_target_url(
-                "https://3g.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1") \
+                "https://m.163.com/sports/article/HEMRKJBI00058781.html?clickfrom=index2018_sports_newslist#offset=1") \
                 .set_match_break(True) \
                 .set_navigation_type(PerformanceNavigationType.BACK_FORWARD) \
                 .set_navigation_redirect_count(random.randint(10, 100)) \
